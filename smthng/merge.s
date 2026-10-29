@@ -12,8 +12,8 @@ merged:
 
     mov eax, [rdi]
     cmp eax, [rsi]
-    jg amore
-    jl bmore
+    jl amore
+    jg bmore
 
 
 amore:
@@ -25,7 +25,7 @@ amore:
     cmp eax, 0
     mov rbx, rsi
     jz finish
-    jmp merge
+    jmp merged
 
 bmore:
     mov eax, [rsi]
@@ -36,7 +36,7 @@ bmore:
     cmp eax, 0
     mov rbx, rdi
     jz finish
-    jmp merge
+    jmp merged
 
 
 finish:
