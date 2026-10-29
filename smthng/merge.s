@@ -1,6 +1,4 @@
 default abs
-section .data
-
 
 section .text
     global merge
