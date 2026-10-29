@@ -7,50 +7,42 @@ section .text
 
 merge:
 
-    mov rax, [rdi]
-    cmp rax, [rsi]
+    mov eax, [edi]
+    cmp eax, [esi]
     jg amore
     jl bmore
 
 
 amore:
-    mov rax, [rdi]
-    mov [rdx], rax
-    add rdx, 4
-    add rdi, 4
-    mov rax, [rdi]
-    cmp rax, 0
-    mov rbx, rsi
+    mov eax, [edi]
+    mov [edx], eax
+    add edx, 4
+    add edi, 4
+    mov eax, [edi]
+    cmp eax, 0
+    mov ebx, esi
     jz finish
-    jmp start
+    jmp merge
 
 bmore:
-    mov rax, [rsi]
-    mov [rdx], rax
-    add rdx, 4
-    add rsi, 4
-    mov rax, [rsi]
-    cmp rax, 0
-    mov rbx, rdi
+    mov eax, [esi]
+    mov [edx], eax
+    add edx, 4
+    add esi, 4
+    mov eax, [esi]
+    cmp eax, 0
+    mov ebx, edi
     jz finish
-    jmp start
+    jmp merge
 
 
 finish:
-    mov rax, [ebx]
-    cmp rax, 0
+    mov eax, [ebx]
+    cmp eax, 0
     jz end
-    mov [rdx], rax
-    add rdx, 4
-    add rbx, 4
+    mov [edx], eax
+    add edx, 4
+    add ebx, 4
     jmp finish
 
-
-
-
 end:
-
-    add rsp, 1
-    mov rax, 60
-    mov rdi, 0
-    syscall

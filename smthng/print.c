@@ -6,6 +6,7 @@ int main(void){
     int C[12] = {0};
 
     extern void merge(int A[], int B[], int C[]);
+    merge(A, B, C);
 
 
     for (int i = 0; i < 12; i++) {
