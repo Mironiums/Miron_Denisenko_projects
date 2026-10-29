@@ -5,12 +5,11 @@ int main(void){
     int B[4] = {12, 14, 25,0};
     int C[12] = {0};
 
-    extern void merge(int A[], int B[], int C[])
+    extern void merge(int A[], int B[], int C[]);
 
-    int size = sizeof(C) / sizeof(C[0]);
 
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
+    for (int i = 0; i < 12; i++) {
+        printf("%d", C[i]);
         printf(", ");
     }
 }
